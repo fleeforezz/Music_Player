@@ -91,12 +91,18 @@
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Mã Máy" Binding="{Binding Id}" Width="70"/>
-                <DataGridTextColumn Header="Tên Máy" Binding="{Binding PlayerName}" Width="*"/>
-                <DataGridTextColumn Header="Loại Máy" Binding="{Binding Category}" Width="100"/>
+
+                <DataGridTextColumn Header="Tên Máy" Binding="{Binding PlayerName}" Width="200"/>
+                
+                <DataGridTextColumn Header="Loại Máy" Binding="{Binding Category}" Width="120"/>
+                
                 <DataGridTextColumn Header="Giá Tiền" Binding="{Binding Price, StringFormat={}{0:N0} VNĐ}" Width="120"/>
-                <DataGridTextColumn Header="Số Lượng" Binding="{Binding Quantity}" Width="80"/>
-                <DataGridTextColumn Header="Ngày SX" Binding="{Binding PublishDate, StringFormat={}{0:dd/MM/yyyy}}" Width="100"/>
-                <DataGridTextColumn Header="Hãng Sản Xuất" Binding="{Binding CompanyName}" Width="150"/>
+
+                <DataGridTextColumn Header="Số Lượng" Binding="{Binding Quantity}" Width="120"/>
+
+                <DataGridTextColumn Header="Ngày SX" Binding="{Binding PublishDate, StringFormat={}{0:dd/MM/yyyy}}" Width="120"/>
+
+                <DataGridTextColumn Header="Hãng Sản Xuất" Binding="{Binding Company.CompanyName}" Width="150"/>
             </DataGrid.Columns>
 
         </DataGrid>

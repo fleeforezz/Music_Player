@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\msi2k\\Documents\\Music_Player\\MediaPlayer.SE1824\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|c:\\users\\msi2k\\documents\\music_player\\mediaplayer.se1824\\mediaplayer.wpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|solutionrelative:mediaplayer.wpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|c:\\users\\msi2k\\documents\\music_player\\mediaplayer.se1824\\mediaplayer.wpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|solutionrelative:mediaplayer.wpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|c:\\users\\msi2k\\documents\\music_player\\mediaplayer.se1824\\mediaplayer.wpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|solutionrelative:mediaplayer.wpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\msi2k\\Documents\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\App.xaml",
+              "RelativeDocumentMoniker": "MediaPlayer.WPF\\App.xaml",
+              "ToolTip": "C:\\Users\\msi2k\\Documents\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\App.xaml",
+              "RelativeToolTip": "MediaPlayer.WPF\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-11T16:16:52.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\msi2k\\Documents\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MediaPlayer.WPF\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\msi2k\\Documents\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\MainWindow.xaml",
+              "RelativeToolTip": "MediaPlayer.WPF\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-11T16:09:24.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\msi2k\\Documents\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MediaPlayer.WPF\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\msi2k\\Documents\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MediaPlayer.WPF\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAADwv6YAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T16:09:24.502Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
