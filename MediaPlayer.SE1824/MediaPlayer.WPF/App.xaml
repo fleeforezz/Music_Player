@@ -10,10 +10,13 @@
             TargetType="Button">
             <Setter
                 Property="Background"
-                Value="#3be477" />
+                Value="#1ed760" />
             <Setter
                 Property="FontSize"
-                Value="20" />
+                Value="18" />
+            <Setter 
+                Property="FontWeight"
+                Value="SemiBold"/>
             <Setter
                 Property="Foreground"
                 Value="#000000" />
@@ -23,15 +26,21 @@
             <Setter
                 Property="Cursor"
                 Value="Hand" />
+            <Setter 
+                Property="Width"
+                Value="225"/>
+            <Setter 
+                Property="Height"
+                Value="40"/>
             <Setter
                 Property="Padding"
-                Value="20,15" />
+                Value="10,5" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border
                             Background="{TemplateBinding Background}"
-                            CornerRadius="15">
+                            CornerRadius="20">
                             <ContentPresenter 
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"/>
@@ -40,7 +49,7 @@
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter
                                     Property="Background"
-                                    Value="#32cd70" />
+                                    Value="#1ed760" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
                                 <Setter 

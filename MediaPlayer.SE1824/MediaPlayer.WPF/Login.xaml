@@ -31,7 +31,7 @@
         <Grid
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
-            Height="324"
+            Height="345"
             Width="300">
             <Border
                 Background="#000000"
@@ -41,7 +41,7 @@
                     <StackPanel
                         Orientation="Horizontal"
                         HorizontalAlignment="Center"
-                        Margin="0,0,0,30">
+                        Margin="0,0,0,25">
                         <Image
                             Source="/Assets/spotify.png"
                             Height="30"
@@ -55,31 +55,40 @@
                             FontWeight="SemiBold"
                             HorizontalAlignment="Center" />
                     </StackPanel>
-                    
+
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        Text="Upload your songs."
+                        Foreground="#ffffff"
+                        FontSize="18"
+                        FontWeight="SemiBold"/>
                     <TextBlock 
                         HorizontalAlignment="Center"
-                        Text="Unlimited songs."
+                        Text="Free on Spootify."
                         Foreground="#ffffff"
-                        FontSize="20"
+                        FontSize="18"
                         FontWeight="SemiBold"
                         Margin="0,0,0,30"/>
 
                     <TextBlock 
                         Text="Email"
+                        Width="225"
                         Foreground="#ffffff"/>
                     <TextBox
                         x:Name="EmailTextBox"
-                        Width="200"
+                        Width="225"
                         Margin="0,0,0,10" />
+                    <TextBlock
+                        Text="Password"
+                        Width="225"
+                        Foreground="#ffffff" />
                     <PasswordBox
                         x:Name="PasswordTextBox"
-                        Width="200"
+                        Width="225"
                         Margin="0,0,0,10" />
                     <Button
                         x:Name="LoginButton"
                         Content="Login"
-                        Width="200"
-                        Height="50"
                         Click="LoginButton_Click" />
                 </StackPanel>
             </Border>

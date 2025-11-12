@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "E:\\Cabinet\\Github\\Music_Player\\MediaPlayer.SE1824\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|e:\\cabinet\\github\\music_player\\mediaplayer.se1824\\mediaplayer.wpf\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|solutionrelative:mediaplayer.wpf\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{393F4F98-9B9F-4863-A4AB-2DA9103B25CF}|MediaPlayer.DAL\\MediaPlayer.DAL.csproj|e:\\cabinet\\github\\music_player\\mediaplayer.se1824\\mediaplayer.dal\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{393F4F98-9B9F-4863-A4AB-2DA9103B25CF}|MediaPlayer.DAL\\MediaPlayer.DAL.csproj|solutionrelative:mediaplayer.dal\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|e:\\cabinet\\github\\music_player\\mediaplayer.se1824\\mediaplayer.wpf\\mediaplayer.wpf.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|solutionrelative:mediaplayer.wpf\\mediaplayer.wpf.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{393F4F98-9B9F-4863-A4AB-2DA9103B25CF}|MediaPlayer.DAL\\MediaPlayer.DAL.csproj|e:\\cabinet\\github\\music_player\\mediaplayer.se1824\\mediaplayer.dal\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{393F4F98-9B9F-4863-A4AB-2DA9103B25CF}|MediaPlayer.DAL\\MediaPlayer.DAL.csproj|solutionrelative:mediaplayer.dal\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|e:\\cabinet\\github\\music_player\\mediaplayer.se1824\\mediaplayer.wpf\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|solutionrelative:mediaplayer.wpf\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|e:\\cabinet\\github\\music_player\\mediaplayer.se1824\\mediaplayer.wpf\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|solutionrelative:mediaplayer.wpf\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|e:\\cabinet\\github\\music_player\\mediaplayer.se1824\\mediaplayer.wpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|solutionrelative:mediaplayer.wpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|e:\\cabinet\\github\\music_player\\mediaplayer.se1824\\mediaplayer.wpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|solutionrelative:mediaplayer.wpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|e:\\cabinet\\github\\music_player\\mediaplayer.se1824\\mediaplayer.wpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|solutionrelative:mediaplayer.wpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|e:\\cabinet\\github\\music_player\\mediaplayer.se1824\\mediaplayer.wpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|solutionrelative:mediaplayer.wpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 113,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -77,20 +85,51 @@
               "Name": "ST:13:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "E:\\Cabinet\\Github\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.DAL\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "MediaPlayer.DAL\\Repositories\\UserRepository.cs",
+              "ToolTip": "E:\\Cabinet\\Github\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.DAL\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "MediaPlayer.DAL\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T05:46:12.874Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MediaPlayer.WPF",
-              "DocumentMoniker": "E:\\Cabinet\\Github\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\MediaPlayer.WPF.csproj",
-              "RelativeDocumentMoniker": "MediaPlayer.WPF\\MediaPlayer.WPF.csproj",
-              "ToolTip": "E:\\Cabinet\\Github\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\MediaPlayer.WPF.csproj",
-              "RelativeToolTip": "MediaPlayer.WPF\\MediaPlayer.WPF.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-12T05:07:37.775Z",
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "E:\\Cabinet\\Github\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.DAL\\Repositories\\IRepository.cs",
+              "RelativeDocumentMoniker": "MediaPlayer.DAL\\Repositories\\IRepository.cs",
+              "ToolTip": "E:\\Cabinet\\Github\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.DAL\\Repositories\\IRepository.cs",
+              "RelativeToolTip": "MediaPlayer.DAL\\Repositories\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T05:44:38.393Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Login.xaml.cs",
+              "DocumentMoniker": "E:\\Cabinet\\Github\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\Login.xaml.cs",
+              "RelativeDocumentMoniker": "MediaPlayer.WPF\\Login.xaml.cs",
+              "ToolTip": "E:\\Cabinet\\Github\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\Login.xaml.cs",
+              "RelativeToolTip": "MediaPlayer.WPF\\Login.xaml.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAjwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T05:43:32.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "App.xaml",
               "DocumentMoniker": "E:\\Cabinet\\Github\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\App.xaml",
               "RelativeDocumentMoniker": "MediaPlayer.WPF\\App.xaml",
@@ -102,7 +141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Login.xaml",
               "DocumentMoniker": "E:\\Cabinet\\Github\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\Login.xaml",
               "RelativeDocumentMoniker": "MediaPlayer.WPF\\Login.xaml",
@@ -114,18 +153,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "E:\\Cabinet\\Github\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MediaPlayer.WPF\\MainWindow.xaml",
               "ToolTip": "E:\\Cabinet\\Github\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\MainWindow.xaml",
               "RelativeToolTip": "MediaPlayer.WPF\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-11T16:09:24.629Z"
+              "WhenOpened": "2025-11-11T16:09:24.629Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "E:\\Cabinet\\Github\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MediaPlayer.WPF\\MainWindow.xaml.cs",
@@ -133,7 +173,8 @@
               "RelativeToolTip": "MediaPlayer.WPF\\MainWindow.xaml.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAIwCYAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T16:09:24.502Z"
+              "WhenOpened": "2025-11-11T16:09:24.502Z",
+              "EditorCaption": ""
             }
           ]
         },
