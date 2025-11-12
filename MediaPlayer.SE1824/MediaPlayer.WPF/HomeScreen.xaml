@@ -10,8 +10,252 @@
     Height="900"
     Width="1450"
     FontFamily="Consolas"
-    WindowStartupLocation="CenterScreen">
-    <Grid>
+    WindowStartupLocation="CenterScreen"
+    Background="#121212">
 
+    <Window.Resources>
+        <!-- Converter -->
+        <local:VolumeConverter
+            x:Key="VolumeConverter" />
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="Auto" />
+            <RowDefinition
+                Height="*" />
+            <RowDefinition
+                Height="100" />
+        </Grid.RowDefinitions>
+
+        <!-- Top Bar -->
+        <Border
+            Grid.Row="0"
+            Background="#181818"
+            Padding="20">
+            <StackPanel
+                Orientation="Horizontal"
+                HorizontalAlignment="Right">
+                <Button
+                    x:Name="btnUploadMusic"
+                    Content="+ Upload Music"
+                    Style="{StaticResource SpotifyButton}"
+                    Click="BtnUploadMusic_Click" />
+            </StackPanel>
+        </Border>
+
+        <!-- Main Content Area -->
+        <Grid
+            Grid.Row="1"
+            Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="Auto" />
+                <RowDefinition
+                    Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <TextBlock
+                Grid.Row="0"
+                Text="Your Library"
+                Foreground="White"
+                FontSize="32"
+                FontWeight="Bold"
+                Margin="0,0,0,20" />
+
+            <!-- Songs List -->
+            <ScrollViewer
+                Grid.Row="1"
+                VerticalScrollBarVisibility="Auto">
+                <ListView
+                    x:Name="lvSongs"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    SelectionChanged="LvSongs_SelectionChanged">
+                    <ListView.ItemContainerStyle>
+                        <Style
+                            TargetType="ListViewItem">
+                            <Setter
+                                Property="Background"
+                                Value="Transparent" />
+                            <Setter
+                                Property="Foreground"
+                                Value="White" />
+                            <Setter
+                                Property="Padding"
+                                Value="10" />
+                            <Setter
+                                Property="Margin"
+                                Value="0,0,0,5" />
+                            <Style.Triggers>
+                                <Trigger
+                                    Property="IsMouseOver"
+                                    Value="True">
+                                    <Setter
+                                        Property="Background"
+                                        Value="#282828" />
+                                </Trigger>
+                                <Trigger
+                                    Property="IsSelected"
+                                    Value="True">
+                                    <Setter
+                                        Property="Background"
+                                        Value="#333333" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn
+                                Header="#"
+                                Width="50">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock
+                                            Text="{Binding SongId}"
+                                            Foreground="#B3B3B3" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn
+                                Header="Title"
+                                Width="300">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock
+                                            Text="{Binding Title}"
+                                            Foreground="White"
+                                            FontWeight="SemiBold" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn
+                                Header="Artist"
+                                Width="250">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock
+                                            Text="{Binding Artist}"
+                                            Foreground="#B3B3B3" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn
+                                Header="Album"
+                                Width="250">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock
+                                            Text="{Binding Album}"
+                                            Foreground="#B3B3B3" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn
+                                Header="Duration"
+                                Width="100">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock
+                                            Text="{Binding DurationFormatted}"
+                                            Foreground="#B3B3B3" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </ScrollViewer>
+        </Grid>
+
+        <!-- Player Controls -->
+        <Border
+            Grid.Row="2"
+            Background="#181818"
+            BorderBrush="#282828"
+            BorderThickness="0,1,0,0">
+            <Grid
+                Margin="20,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="Auto" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Now Playing Info -->
+                <StackPanel
+                    Grid.Column="0"
+                    VerticalAlignment="Center">
+                    <TextBlock
+                        x:Name="txtNowPlaying"
+                        Text="No song playing"
+                        Foreground="White"
+                        FontSize="14"
+                        FontWeight="SemiBold" />
+                    <TextBlock
+                        x:Name="txtNowPlayingArtist"
+                        Text=""
+                        Foreground="#B3B3B3"
+                        FontSize="12" />
+                </StackPanel>
+
+                <!-- Playback Controls -->
+                <StackPanel
+                    Grid.Column="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                    <Button
+                        x:Name="btnPlay"
+                        Content="▶"
+                        Width="50"
+                        Height="50"
+                        Style="{StaticResource SpotifyButton}"
+                        Margin="5"
+                        Click="BtnPlay_Click" />
+                    <Button
+                        x:Name="btnStop"
+                        Content="■"
+                        Width="50"
+                        Height="50"
+                        Style="{StaticResource SpotifyButton}"
+                        Margin="5"
+                        Click="BtnStop_Click" />
+                </StackPanel>
+
+                <!-- Volume Control (placeholder) -->
+                <StackPanel
+                    Grid.Column="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center">
+                    <TextBlock
+                        Text="🔊"
+                        Foreground="White"
+                        FontSize="20"
+                        Margin="0,0,10,0" />
+                    <Slider
+                        x:Name="sliderVolume"
+                        Width="100"
+                        Minimum="0"
+                        Maximum="100"
+                        Value="50"
+                        VerticalAlignment="Center" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- MediaElement for playing audio -->
+        <!--<MediaElement
+            x:Name="mediaPlayer"
+            LoadedBehavior="Manual"
+            Volume="{Binding ElementName=sliderVolume, Path=Value, Converter={StaticResource VolumeConverter}}"
+            Visibility="Collapsed" /> -->
     </Grid>
 </Window>

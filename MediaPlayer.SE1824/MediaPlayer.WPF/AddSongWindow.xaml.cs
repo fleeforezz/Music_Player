@@ -30,13 +30,13 @@ namespace MediaPlayer.WPF
 
         private void SelectSong_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "MP3 Files|*.mp3;*.wav;*.flac";
-            if (ofd.ShowDialog() == true)
-            {
-                selectedCoverPath = ;
-                selectedSongPath. = ofd.FileName;
-            }
+            //OpenFileDialog ofd = new OpenFileDialog();
+            //ofd.Filter = "MP3 Files|*.mp3;*.wav;*.flac";
+            //if (ofd.ShowDialog() == true)
+            //{
+            //    selectedCoverPath = ;
+            //    selectedSongPath. = ofd.FileName;
+            //}
         }
 
         private void SelectCoverImage_Click(object sender, RoutedEventArgs e)

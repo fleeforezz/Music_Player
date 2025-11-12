@@ -23,5 +23,10 @@ namespace MediaPlayer.WPF
         {
             InitializeComponent();
         }
+
+        private void BtnUploadMusic_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
