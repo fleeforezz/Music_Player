@@ -13,6 +13,8 @@ public partial class User
 
     public string PasswordHash { get; set; } = null!;
 
+    public string? ProfileImage { get; set; }
+
     public int Role { get; set; }
 
     public DateTime? CreatedAt { get; set; }

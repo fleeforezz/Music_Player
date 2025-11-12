@@ -12,6 +12,4 @@ public partial class PlaylistSong
     public DateTime? AddedAt { get; set; }
 
     public virtual Playlist Playlist { get; set; } = null!;
-
-    public virtual Song Song { get; set; } = null!;
 }

@@ -15,6 +15,8 @@ public partial class Song
 
     public string FilePath { get; set; } = null!;
 
+    public string CoverImagePath { get; set; } = null!;
+
     public int? Duration { get; set; }
 
     public string? Genre { get; set; }
@@ -22,6 +24,4 @@ public partial class Song
     public DateTime? CreatedAt { get; set; }
 
     public virtual Artist? Artist { get; set; }
-
-    public virtual ICollection<PlaylistSong> PlaylistSongs { get; set; } = new List<PlaylistSong>();
 }

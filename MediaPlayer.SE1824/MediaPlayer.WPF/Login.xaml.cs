@@ -46,8 +46,9 @@ namespace MediaPlayer.WPF
                 return;
             }
 
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            HomeScreen homeScreen = new HomeScreen();
+            homeScreen.Show();
+            this.Hide();
         }
     }
 }

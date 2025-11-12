@@ -72,17 +72,13 @@ public partial class MediaPlayerContext : DbContext
                 .HasForeignKey(d => d.PlaylistId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__PlaylistS__Playl__3A81B327");
-
-            entity.HasOne(d => d.Song).WithMany(p => p.PlaylistSongs)
-                .HasForeignKey(d => d.SongId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__PlaylistS__SongI__3B75D760");
         });
 
         modelBuilder.Entity<Song>(entity =>
         {
-            entity.HasKey(e => e.SongId).HasName("PK__Songs__12E3D69753518518");
+            entity.HasKey(e => e.SongId).HasName("PK__Songs__12E3D697D0B35EE4");
 
+            entity.Property(e => e.CoverImagePath).HasMaxLength(200);
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
@@ -92,22 +88,23 @@ public partial class MediaPlayerContext : DbContext
 
             entity.HasOne(d => d.Artist).WithMany(p => p.Songs)
                 .HasForeignKey(d => d.ArtistId)
-                .HasConstraintName("FK__Songs__ArtistId__32E0915F");
+                .HasConstraintName("FK__Songs__ArtistId__4E88ABD4");
         });
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__Users__1788CC4C07A5C677");
+            entity.HasKey(e => e.UserId).HasName("PK__Users__1788CC4C3EFA9B29");
 
-            entity.HasIndex(e => e.Username, "UQ__Users__536C85E4710324C0").IsUnique();
+            entity.HasIndex(e => e.Username, "UQ__Users__536C85E49672BFF6").IsUnique();
 
-            entity.HasIndex(e => e.Email, "UQ__Users__A9D10534B24079E0").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__Users__A9D105348D912E58").IsUnique();
 
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
             entity.Property(e => e.Email).HasMaxLength(100);
             entity.Property(e => e.PasswordHash).HasMaxLength(256);
+            entity.Property(e => e.ProfileImage).HasMaxLength(256);
             entity.Property(e => e.Username).HasMaxLength(100);
         });
 
