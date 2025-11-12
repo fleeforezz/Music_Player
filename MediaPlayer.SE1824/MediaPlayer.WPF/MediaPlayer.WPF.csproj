@@ -6,10 +6,40 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>spotify.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\spotify-logo.png" />
+    <None Remove="Assets\spotify.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="spotify.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="TagLibSharp" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MediaPlayer.BLL\MediaPlayer.BLL.csproj" />
+    <ProjectReference Include="..\MediaPlayer.DAL\MediaPlayer.DAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\spotify-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\spotify.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
