@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MediaPlayer.BLL.Services;
+using MediaPlayer.DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +21,8 @@ namespace MediaPlayer.WPF
     /// </summary>
     public partial class Login : Window
     {
+        private UserService _userService = new();
+
         public Login()
         {
             InitializeComponent();
@@ -26,7 +30,24 @@ namespace MediaPlayer.WPF
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+            string email = EmailTextBox.Text;
+            string password = PasswordTextBox.Password;
 
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Both email and password are required!", "Validation", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            User? account = _userService.Login(email, password);
+            if (account == null)
+            {
+                MessageBox.Show("Invalid Email or password", "Login Failed", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
         }
     }
 }

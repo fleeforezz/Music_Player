@@ -9,29 +9,72 @@ namespace MediaPlayer.DAL.Repositories
 {
     public class UserRepository : IRepository<User>
     {
+        private MediaPlayerContext _db;
+
+        /*
+        *  Create  
+        */
         public void Create(User entity)
         {
-            throw new NotImplementedException();
+            _db = new();
+            _db.Users.Add(entity);
+            _db.SaveChanges();
         }
 
+        /*
+        *  Delete  
+        */
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _db = new();
+            _db.Remove(id);
+            _db.SaveChanges();
         }
 
+        /*
+        *  Get All  
+        */
         public List<User> GetAll()
         {
-            throw new NotImplementedException();
+            _db = new();
+            return _db.Users.ToList();
         }
 
-        public User GetById(int id)
+        /*
+        *  Get By Id  
+        */
+        public User? GetById(int id)
         {
-            throw new NotImplementedException();
+            _db = new();
+            return _db.Users.FirstOrDefault(u => u.UserId == id);
         }
 
+        /*
+        *  Get By Email  
+        */
+        public User? GetByEmail(string email)
+        {
+            _db = new();
+            return _db.Users.FirstOrDefault(u => u.Email == email);
+        }
+
+        /*
+        *  Get By Email/Password
+        */
+        public User? GetByEmailPassword(string email, string password)
+        {
+            _db = new();
+            return _db.Users.FirstOrDefault(u => u.Email == email && u.PasswordHash == password);
+        }
+
+        /*
+        *  Update 
+        */
         public void Update(User entity)
         {
-            throw new NotImplementedException();
+            _db = new();
+            _db.Users.Update(entity);
+            _db.SaveChanges();
         }
     }
 }

@@ -9,9 +9,11 @@ public partial class User
 
     public string Username { get; set; } = null!;
 
+    public string Email { get; set; } = null!;
+
     public string PasswordHash { get; set; } = null!;
 
-    public DateTime? CreatedAt { get; set; }
+    public int Role { get; set; }
 
-    public virtual ICollection<Playlist> Playlists { get; set; } = new List<Playlist>();
+    public DateTime? CreatedAt { get; set; }
 }

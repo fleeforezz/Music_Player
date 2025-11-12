@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using MediaPlayer.DAL.Entities;
+﻿using MediaPlayer.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using System;
+using System.Collections.Generic;
 
 namespace MediaPlayer.DAL;
 
@@ -27,8 +28,18 @@ public partial class MediaPlayerContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=jsomysql.duckdns.org,32768;uid=sa;pwd=TMNNT012928637160822863716;database=MediaPLayer;TrustServerCertificate=True");
+    => optionsBuilder.UseSqlServer(GetConnectionString());
+
+    private string GetConnectionString()
+    {
+        IConfiguration config = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+                   .AddJsonFile("appsettings.json", true, true)
+                   .Build();
+        var strConn = config["ConnectionStrings:DefaultConnectionStringDB"];
+
+        return strConn;
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -47,11 +58,6 @@ public partial class MediaPlayerContext : DbContext
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
             entity.Property(e => e.PlaylistName).HasMaxLength(150);
-
-            entity.HasOne(d => d.User).WithMany(p => p.Playlists)
-                .HasForeignKey(d => d.UserId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Playlists__UserI__36B12243");
         });
 
         modelBuilder.Entity<PlaylistSong>(entity =>
@@ -91,13 +97,16 @@ public partial class MediaPlayerContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__Users__1788CC4CB3A4596D");
+            entity.HasKey(e => e.UserId).HasName("PK__Users__1788CC4C07A5C677");
 
-            entity.HasIndex(e => e.Username, "UQ__Users__536C85E49EAC0E15").IsUnique();
+            entity.HasIndex(e => e.Username, "UQ__Users__536C85E4710324C0").IsUnique();
+
+            entity.HasIndex(e => e.Email, "UQ__Users__A9D10534B24079E0").IsUnique();
 
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
+            entity.Property(e => e.Email).HasMaxLength(100);
             entity.Property(e => e.PasswordHash).HasMaxLength(256);
             entity.Property(e => e.Username).HasMaxLength(100);
         });

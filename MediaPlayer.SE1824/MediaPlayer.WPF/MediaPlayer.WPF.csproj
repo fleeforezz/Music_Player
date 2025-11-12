@@ -23,6 +23,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MediaPlayer.BLL\MediaPlayer.BLL.csproj" />
+    <ProjectReference Include="..\MediaPlayer.DAL\MediaPlayer.DAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Assets\spotify-logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
