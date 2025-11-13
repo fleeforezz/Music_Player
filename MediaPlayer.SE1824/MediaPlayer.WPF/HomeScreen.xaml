@@ -14,11 +14,10 @@
     Background="#121212">
 
     <Window.Resources>
-        <!-- Converter -->
         <local:VolumeConverter
             x:Key="VolumeConverter" />
     </Window.Resources>
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition
@@ -160,7 +159,7 @@
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock
-                                            Text="{Binding DurationFormatted}"
+                                            Text="{Binding Duration}"
                                             Foreground="#B3B3B3" />
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
@@ -252,10 +251,10 @@
         </Border>
 
         <!-- MediaElement for playing audio -->
-        <!--<MediaElement
+        <MediaElement
             x:Name="mediaPlayer"
             LoadedBehavior="Manual"
             Volume="{Binding ElementName=sliderVolume, Path=Value, Converter={StaticResource VolumeConverter}}"
-            Visibility="Collapsed" /> -->
+            Visibility="Collapsed" />
     </Grid>
 </Window>

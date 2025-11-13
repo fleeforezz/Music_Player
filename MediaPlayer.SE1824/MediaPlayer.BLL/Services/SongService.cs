@@ -10,11 +10,38 @@ namespace MediaPlayer.BLL.Services
 {
     public class SongService
     {
-        private SongRepository _repo;
+        private SongRepository _repo = new();
 
+        /*
+        *  Get All Songs  
+        */
         public List<Song> GetAllSongs()
         {
             return _repo.GetAll();
+        }
+
+        /*
+        *  Create new Song
+        */
+        public void CreateSong(Song song)
+        {
+            _repo.Create(song);
+        }
+
+        /*
+        *  Update song
+        */
+        public void UpdateSong(Song song)
+        {
+            _repo.Update(song);
+        }
+
+        /*
+        *  Delete song
+        */
+        public void DeleteSong(int id)
+        {
+            _repo.Delete(id);
         }
     }
 }

@@ -76,6 +76,7 @@
                         Foreground="#ffffff"/>
                     <TextBox
                         x:Name="EmailTextBox"
+                        Style="{StaticResource TextBoxStyle}"
                         Width="225"
                         Margin="0,0,0,10" />
                     <TextBlock
@@ -84,11 +85,13 @@
                         Foreground="#ffffff" />
                     <PasswordBox
                         x:Name="PasswordTextBox"
+                        Style="{StaticResource PasswordBoxStyle}"
                         Width="225"
                         Margin="0,0,0,10" />
                     <Button
                         x:Name="LoginButton"
                         Content="Login"
+                        Style="{StaticResource SpotifyButton}"
                         Click="LoginButton_Click" />
                 </StackPanel>
             </Border>

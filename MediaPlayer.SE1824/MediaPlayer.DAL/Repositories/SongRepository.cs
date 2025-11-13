@@ -9,7 +9,7 @@ namespace MediaPlayer.DAL.Repositories
 {
     public class SongRepository : IRepository<Song>
     {
-        private MediaPlayerContext _db;
+        private MediaPlayerContext _db = new();
 
         /*
         *  Create 
