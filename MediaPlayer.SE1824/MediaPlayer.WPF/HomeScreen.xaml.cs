@@ -16,6 +16,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace MediaPlayer.WPF
 {
@@ -27,6 +28,7 @@ namespace MediaPlayer.WPF
         private SongService _songService = new();
         private ObservableCollection<Song> songs = new ObservableCollection<Song>();
         private Song currentSong;
+        private DispatcherTimer timer;
 
         public HomeScreen()
         {
@@ -34,6 +36,11 @@ namespace MediaPlayer.WPF
 
             LoadSongsFromDatabase();
             lvSongs.ItemsSource = songs;
+
+            // Initialize timer
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += Timer_Tick;
         }
 
         private void LoadSongsFromDatabase()
@@ -67,8 +74,19 @@ namespace MediaPlayer.WPF
             if (lvSongs.SelectedItem is Song song)
             {
                 currentSong = song;
+
                 txtNowPlaying.Text = song.Title;
-                //txtNowPlayingArtist.Text = song.Artist;
+                txtNowPlayingArtist.Text = song.Artist?.ArtistName ?? "Unknown Artist";
+
+                // Cover Image
+                if (!string.IsNullOrEmpty(song.CoverImagePath) && File.Exists(song.CoverImagePath))
+                {
+                    imgCoverArt.Source = new BitmapImage(new Uri(song.CoverImagePath));
+                }
+                else
+                {
+                    imgCoverArt.Source = null; // or default album art
+                }
             }
         }
 
@@ -83,6 +101,9 @@ namespace MediaPlayer.WPF
                         mediaPlayer.Source = new Uri(currentSong.FilePath);
                         mediaPlayer.Play();
                         btnPlay.Content = "#";
+
+                        // Start updating progress
+                        timer.Start();
                     }
                 }
                 catch (Exception ex)
@@ -102,6 +123,30 @@ namespace MediaPlayer.WPF
         {
             mediaPlayer.Stop();
             btnPlay.Content = "▶";
+
+            // Stop timer and reset progress
+            timer.Stop();
+            progressBar.Value = 0;
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (mediaPlayer.NaturalDuration.HasTimeSpan)
+            {
+                // Update progress bar
+                progressBar.Maximum = mediaPlayer.NaturalDuration.TimeSpan.TotalSeconds;
+                progressBar.Value = mediaPlayer.Position.TotalSeconds;
+            }
+        }
+
+        private void progressBar_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (mediaPlayer.NaturalDuration.HasTimeSpan)
+            {
+                var mousePos = e.GetPosition(progressBar).X;
+                var ratio = mousePos / progressBar.ActualWidth;
+                mediaPlayer.Position = TimeSpan.FromSeconds(ratio * mediaPlayer.NaturalDuration.TimeSpan.TotalSeconds);
+            }
         }
     }
 }

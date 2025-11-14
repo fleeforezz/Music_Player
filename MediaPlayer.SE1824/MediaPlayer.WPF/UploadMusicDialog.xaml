@@ -7,7 +7,7 @@
     xmlns:local="clr-namespace:MediaPlayer.WPF"
     mc:Ignorable="d"
     Title="Add Song Details"
-    Height="470"
+    Height="500"
     Width="550"
     Background="#121212"
     WindowStartupLocation="CenterOwner"
@@ -35,6 +35,25 @@
         <!-- Form -->
         <StackPanel
             Grid.Row="1">
+            <TextBlock
+                Text="Cover Image"
+                Style="{StaticResource LabelStyle}" />
+            <StackPanel
+                Orientation="Horizontal">
+                <Button
+                    Content="Browse Image"
+                    Width="100"
+                    FontSize="12"
+                    Height="40"
+                    Style="{StaticResource SpotifyButton}"
+                    Click="BtnBrowseImage_Click" />
+                <Image
+                    x:Name="imgCover"
+                    Width="80"
+                    Height="80"
+                    Margin="10,0,0,0" />
+            </StackPanel>
+
             <TextBlock
                 Text="Song Title*"
                 Style="{StaticResource LabelStyle}" />

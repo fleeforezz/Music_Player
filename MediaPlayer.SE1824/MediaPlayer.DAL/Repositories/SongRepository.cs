@@ -40,6 +40,7 @@ namespace MediaPlayer.DAL.Repositories
         public List<Song> GetAll()
         {
             return _db.Songs
+                .Include(s => s.Artist)
                 .OrderByDescending(s => s.CreatedAt)
                 .ToList();
         }

@@ -24,7 +24,8 @@ namespace MediaPlayer.WPF
     public partial class UploadMusicDialog : Window
     {
         private SongService _songService = new();
-        private string _selectedFilePath;
+        private string _selectedAudioPath;
+        private string _selectedCoverPath;
 
         public UploadMusicDialog()
         {
@@ -74,12 +75,29 @@ namespace MediaPlayer.WPF
 
         private bool SaveSongToDatabase(string title, string artist, string genre, string filePath)
         {
-            int? artistId = null;
-            if (!string.IsNullOrWhiteSpace(artist))
-                artistId = _songService.GetOrCreateArtist(artist);
-
             try
             {
+                string appData = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Media");
+                Directory.CreateDirectory(appData);
+
+                string songsDir = System.IO.Path.Combine(appData, "Songs");
+                string coversDir = System.IO.Path.Combine(appData, "Covers");
+
+                Directory.CreateDirectory(songsDir);
+                Directory.CreateDirectory(coversDir);
+
+                // Copy audio file
+                string audioDest = System.IO.Path.Combine(songsDir, System.IO.Path.GetFileName(filePath));
+                File.Copy(filePath, audioDest, true);
+
+                // Copy cover image if selected
+                string coverDest = null;
+                if (!string.IsNullOrEmpty(_selectedCoverPath))
+                {
+                    coverDest = System.IO.Path.Combine(coversDir, System.IO.Path.GetFileName(_selectedCoverPath));
+                    File.Copy(_selectedCoverPath, coverDest, true);
+                }
+
                 // Validate file exists
                 if (!File.Exists(filePath))
                 {
@@ -88,6 +106,10 @@ namespace MediaPlayer.WPF
                     return false;
                 }
 
+                int? artistId = null;
+                if (!string.IsNullOrWhiteSpace(artist))
+                    artistId = _songService.GetOrCreateArtist(artist);
+
                 // Get actual duration if possible (you may need to implement this)
                 var duration = GetAudioDuration(filePath);
 
@@ -95,10 +117,10 @@ namespace MediaPlayer.WPF
                 {
                     Title = title,
                     ArtistId = artistId,
-                    Duration = duration,
-                    FilePath = filePath,
                     Genre = genre,
-                    CoverImagePath = ""
+                    Duration = duration,
+                    FilePath = audioDest,
+                    CoverImagePath = coverDest ?? "",
                 };
 
                 _songService.CreateSong(createSong);
@@ -121,13 +143,8 @@ namespace MediaPlayer.WPF
         {
             try
             {
-                // You can use TagLib or NAudio to get actual duration
-                // For now, returning 0 as placeholder
-                // Example with TagLib:
-                // var file = TagLib.File.Create(filePath);
-                // return (int)file.Properties.Duration.TotalSeconds;
-
-                return 0;
+                var file = TagLib.File.Create(filePath);
+                return (int)file.Properties.Duration.TotalSeconds;
             }
             catch
             {
@@ -146,14 +163,37 @@ namespace MediaPlayer.WPF
 
             if (openFileDialog.ShowDialog() == true)
             {
-                _selectedFilePath = openFileDialog.FileName;
-                txtFileName.Text = $"Selected: {System.IO.Path.GetFileName(_selectedFilePath)}";
+                _selectedAudioPath = openFileDialog.FileName;
+                txtFileName.Text = $"Selected: {System.IO.Path.GetFileName(_selectedAudioPath)}";
 
                 // Auto-fill title if empty
                 if (string.IsNullOrWhiteSpace(txtTitle.Text))
                 {
-                    txtTitle.Text = System.IO.Path.GetFileNameWithoutExtension(_selectedFilePath);
+                    txtTitle.Text = System.IO.Path.GetFileNameWithoutExtension(_selectedAudioPath);
                 }
+            }
+        }
+
+        private void BtnBrowseImage_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog
+            {
+                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp",
+                Multiselect = false,
+                Title = "Select Cover Image"
+            };
+
+            if (dlg.ShowDialog() == true)
+            {
+                _selectedCoverPath = dlg.FileName;
+
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(_selectedCoverPath);
+                bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                bitmap.EndInit();
+
+                imgCover.Source = bitmap;
             }
         }
     }
