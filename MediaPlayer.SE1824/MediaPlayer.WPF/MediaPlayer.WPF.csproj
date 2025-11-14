@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Favorite_song.jpg" />
     <None Remove="Assets\spotify-logo.png" />
     <None Remove="Assets\spotify.png" />
   </ItemGroup>
@@ -28,6 +29,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\Favorite_song.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\spotify-logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

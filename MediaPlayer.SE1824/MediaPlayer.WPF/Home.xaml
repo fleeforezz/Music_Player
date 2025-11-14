@@ -1,0 +1,253 @@
+﻿<Window
+    x:Class="MediaPlayer.WPF.Home"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MediaPlayer.WPF"
+    mc:Ignorable="d"
+    Title="Spootify"
+    Height="900"
+    Width="1450"
+    FontFamily="Segoe UI"
+    WindowStartupLocation="CenterScreen"
+    Background="#000000">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+                Width="240" />
+            <ColumnDefinition
+                Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Left Sidebar -->
+        <Border
+            Grid.Column="0"
+            Background="#000000"
+            Padding="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition
+                        Height="Auto" />
+                    <RowDefinition
+                        Height="Auto" />
+                    <RowDefinition
+                        Height="*" />
+                    <RowDefinition
+                        Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!-- App Title -->
+                <StackPanel
+                    Grid.Row="0"
+                    Margin="10,10,10,20">
+                    <TextBlock
+                        Text="Spootify"
+                        Foreground="White"
+                        FontSize="20"
+                        FontWeight="Bold" />
+                </StackPanel>
+
+                <!-- Navigation Menu -->
+                <StackPanel
+                    Grid.Row="2">
+                    <TextBlock
+                        Text="My Library"
+                        Foreground="White"
+                        FontWeight="SemiBold"
+                        Margin="15,10,0,10"
+                        FontSize="13" />
+
+                    <Button
+                        Content="Home"
+                        Style="{StaticResource ModernButton}" />
+                    <Button
+                        Content="Tracks"
+                        Style="{StaticResource ModernButton}" />
+                    <Button
+                        Content="Artists"
+                        Style="{StaticResource ModernButton}" />
+                    <Button
+                        Content="Genres"
+                        Style="{StaticResource ModernButton}" />
+
+                    <Separator
+                        Margin="10,15"
+                        Background="#282828" />
+
+                    <TextBlock
+                        Text="Playlists"
+                        Foreground="White"
+                        FontWeight="SemiBold"
+                        Margin="15,10,0,10"
+                        FontSize="13" />
+                </StackPanel>
+
+                <!-- Upload Button -->
+                <Button
+                    Grid.Row="3"
+                    x:Name="btnUploadMusic"
+                    Content="+ Upload Music"
+                    Background="#1DB954"
+                    Foreground="Black"
+                    FontWeight="SemiBold"
+                    Padding="15,10"
+                    Margin="10"
+                    BorderThickness="0"
+                    Cursor="Hand"
+                    Click="BtnUploadMusic_Click">
+                    <Button.Template>
+                        <ControlTemplate
+                            TargetType="Button">
+                            <Border
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="20"
+                                Padding="{TemplateBinding Padding}">
+                                <ContentPresenter
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+        </Border>
+
+        <!-- Main Content Area -->
+        <Grid
+            Grid.Column="1"
+            Background="#121212">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="90" />
+            </Grid.RowDefinitions>
+
+            <!-- Scrollable Content -->
+            <ScrollViewer
+                Grid.Row="0"
+                VerticalScrollBarVisibility="Auto">
+                <StackPanel
+                    Margin="30,20">
+
+                    <!-- Hero Section -->
+                    <Border
+                        Height="280"
+                        CornerRadius="8"
+                        Margin="0,0,0,30">
+                        <Border.Background>
+                            <LinearGradientBrush
+                                StartPoint="0,0"
+                                EndPoint="1,0">
+                                <GradientStop
+                                    Color="#8B2828"
+                                    Offset="0" />
+                                <GradientStop
+                                    Color="#2D5F4F"
+                                    Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Grid>
+                            <StackPanel
+                                Orientation="Horizontal"
+                                VerticalAlignment="Center"
+                                Margin="40">
+                                <Border
+                                    Width="160"
+                                    Height="160"
+                                    CornerRadius="8"
+                                    Background="#DC3545"
+                                    Margin="0,0,30,0">
+                                    <Image
+                                        x:Name="imageHeroArt"
+                                        Stretch="UniformToFill" />
+                                </Border>
+                                <StackPanel
+                                    VerticalAlignment="Center">
+                                    <TextBlock
+                                        x:Name="txtHeroTitle"
+                                        Text="Dancing With a Stranger (Single)"
+                                        Foreground="White"
+                                        FontSize="48"
+                                        FontWeight="Bold"
+                                        TextWrapping="Wrap"
+                                        MaxWidth="600" />
+                                    <TextBlock
+                                        x:Name="txtHeroArtist"
+                                        Text="Sam Smith, Normal"
+                                        Foreground="#E0E0E0" />
+                                    <StackPanel
+                                        Orientation="Horizontal"
+                                        Margin="0,15,0,0">
+                                        <Border
+                                            Background="#333333"
+                                            CornerRadius="4"
+                                            Padding="8,4"
+                                            Margin="0,0,10,0">
+                                            <TextBlock
+                                                Text="POP"
+                                                Foreground="White"
+                                                FontSize="12" />
+                                        </Border>
+                                        <Border
+                                            Background="#333333"
+                                            CornerRadius="4"
+                                            Padding="8,4"
+                                            Margin="0,0,10,0">
+                                            <TextBlock
+                                                Text="2019"
+                                                Foreground="White"
+                                                FontSize="12" />
+                                        </Border>
+                                    </StackPanel>
+                                    <!-- <Button
+                                        Content="▶"
+                                        Style="{StaticResource PlayButton}"
+                                        Margin="0,20,0,0"
+                                        Click="BtnPlay_Click"/> -->
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <!-- Most Played Section -->
+                    <Grid
+                        Margin="0,0,0,30">
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+                                Height="Auto" />
+                            <RowDefinition
+                                Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel
+                            Grid.Row="0"
+                            Orientation="Horizontal"
+                            Margin="0,0,0,15">
+                            <TextBlock 
+                                Text="Most Played"
+                                Foreground="White"
+                                FontSize="24"
+                                FontWeight="Bold"/>
+                        </StackPanel>
+
+                        <ScrollViewer
+                            Grid.Row="1"
+                            HorizontalScrollBarVisibility="Auto"
+                            VerticalScrollBarVisibility="Auto">
+                            <WrapPanel
+                                x:Name="pnlMostPlayed"
+                                Orientation="Horizontal">
+                                <!-- Album cards will be added here programmatically -->
+                            </WrapPanel>
+                        </ScrollViewer>
+                    </Grid>
+
+                    <!-- Explore Section -->
+                    
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Window>
