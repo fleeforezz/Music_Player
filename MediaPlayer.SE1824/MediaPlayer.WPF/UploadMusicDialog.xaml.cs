@@ -3,6 +3,7 @@ using MediaPlayer.DAL.Entities;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace MediaPlayer.WPF
     public partial class UploadMusicDialog : Window
     {
         private SongService _songService = new();
+        private string _selectedFilePath;
 
         public UploadMusicDialog()
         {
@@ -31,52 +33,127 @@ namespace MediaPlayer.WPF
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
-
+            DialogResult = false;
+            Close();
         }
 
         private void BtnUpload_Click(object sender, RoutedEventArgs e)
         {
-            string title = txtTitle.Text;
-            string album = txtAlbum.Text;
-            string artist = txtArtist.Text;
+            // Validate required fields
+            if (string.IsNullOrWhiteSpace(txtTitle.Text))
+            {
+                MessageBox.Show("Please enter a song title.", "Validation Error",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                txtTitle.Focus();
+                return;
+            }
 
+            // Open file dialog to select song file
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                Filter = "Adio Files|*.mp3;*.wav;*.wma;*.m4a|All Files|*.*",
-                Multiselect = true,
+                Filter = "Audio Files|*.mp3;*.wav;*.wma;*.m4a;*.flac;*.aac|All Files|*.*",
+                Multiselect = false, // Changed to single file selection for clearer UX
+                Title = "Select Audio File"
             };
 
             if (openFileDialog.ShowDialog() == true)
             {
-                foreach (string filePath in openFileDialog.FileNames)
+                string filePath = openFileDialog.FileName;
+                string title = txtTitle.Text.Trim();
+                string artist = txtArtist.Text.Trim(); 
+                string genre = txtGenre.Text.Trim();
+
+                // Save to database
+                if (SaveSongToDatabase(title, artist, genre, filePath))
                 {
-                    SaveSongToDatabase(title, album, title, filePath);
+                    DialogResult = true;
+                    Close();
                 }
             }
         }
 
-        private void SaveSongToDatabase(string title, string artist, string album, string filePath)
+        private bool SaveSongToDatabase(string title, string artist, string genre, string filePath)
         {
+            int? artistId = null;
+            if (!string.IsNullOrWhiteSpace(artist))
+                artistId = _songService.GetOrCreateArtist(artist);
+
             try
             {
+                // Validate file exists
+                if (!File.Exists(filePath))
+                {
+                    MessageBox.Show("Selected file does not exist.", "File Error",
+                        MessageBoxButton.OK, MessageBoxImage.Error);
+                    return false;
+                }
+
+                // Get actual duration if possible (you may need to implement this)
+                var duration = GetAudioDuration(filePath);
+
                 var createSong = new Song()
                 {
                     Title = title,
-                    //Artist = artist,
-                    //AlbumId = album,
-                    Duration = 0,
-                    FilePath = filePath
+                    ArtistId = artistId,
+                    Duration = duration,
+                    FilePath = filePath,
+                    Genre = genre,
+                    CoverImagePath = ""
                 };
 
                 _songService.CreateSong(createSong);
 
-                MessageBox.Show("Song uploaded successfully!", "Success",
+                MessageBox.Show($"Song '{title}' uploaded successfully!", "Success",
                     MessageBoxButton.OK, MessageBoxImage.Information);
+
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error saving song: {ex.Message}", "Database Error",
                     MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Error saving song: {ex.Message}");
+                return false;
+            }
+        }
+
+        private int GetAudioDuration(string filePath)
+        {
+            try
+            {
+                // You can use TagLib or NAudio to get actual duration
+                // For now, returning 0 as placeholder
+                // Example with TagLib:
+                // var file = TagLib.File.Create(filePath);
+                // return (int)file.Properties.Duration.TotalSeconds;
+
+                return 0;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
+        private void BtnBrowse_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Audio Files|*.mp3;*.wav;*.wma;*.m4a;*.flac;*.aac|All Files|*.*",
+                Multiselect = false,
+                Title = "Select Audio File"
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                _selectedFilePath = openFileDialog.FileName;
+                txtFileName.Text = $"Selected: {System.IO.Path.GetFileName(_selectedFilePath)}";
+
+                // Auto-fill title if empty
+                if (string.IsNullOrWhiteSpace(txtTitle.Text))
+                {
+                    txtTitle.Text = System.IO.Path.GetFileNameWithoutExtension(_selectedFilePath);
+                }
             }
         }
     }

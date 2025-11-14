@@ -1,4 +1,5 @@
 ﻿using MediaPlayer.DAL.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,6 +67,17 @@ namespace MediaPlayer.DAL.Repositories
         public List<Song> Search(string searchTerm)
         {
             throw new NotImplementedException();
+        }
+
+        public int GetOrCreateArtist(string name)
+        {
+            var artist = _db.Artists.FirstOrDefault(a => a.ArtistName == name);
+            if (artist != null) return artist.ArtistId;
+
+            var newArtist = new Artist { ArtistName = name };
+            _db.Artists.Add(newArtist);
+            _db.SaveChanges();
+            return newArtist.ArtistId;
         }
     }
 }

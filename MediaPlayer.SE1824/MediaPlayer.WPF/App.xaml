@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:MediaPlayer.WPF"
-    StartupUri="HomeScreen.xaml">
+    StartupUri="Login.xaml">
     <Application.Resources>
         <!-- Button -->
         <Style

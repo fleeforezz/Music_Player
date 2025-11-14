@@ -38,6 +38,7 @@ namespace MediaPlayer.WPF
 
         private void LoadSongsFromDatabase()
         {
+            songs.Clear();
             try
             {
                 var songFromDb = _songService.GetAllSongs();

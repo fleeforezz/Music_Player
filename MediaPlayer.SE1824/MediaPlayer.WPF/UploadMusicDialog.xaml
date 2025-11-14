@@ -7,8 +7,8 @@
     xmlns:local="clr-namespace:MediaPlayer.WPF"
     mc:Ignorable="d"
     Title="Add Song Details"
-    Height="400"
-    Width="500"
+    Height="470"
+    Width="550"
     Background="#121212"
     WindowStartupLocation="CenterOwner"
     ResizeMode="NoResize">
@@ -50,10 +50,10 @@
                 Style="{StaticResource TextBoxStyle}" />
 
             <TextBlock
-                Text="Album"
+                Text="Genre"
                 Style="{StaticResource LabelStyle}" />
             <TextBox
-                x:Name="txtAlbum"
+                x:Name="txtGenre"
                 Style="{StaticResource TextBoxStyle}" />
 
             <TextBlock

@@ -1,5 +1,6 @@
 ﻿using MediaPlayer.DAL.Entities;
 using MediaPlayer.DAL.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,11 @@ namespace MediaPlayer.BLL.Services
         public void DeleteSong(int id)
         {
             _repo.Delete(id);
+        }
+
+        public int GetOrCreateArtist(string name)
+        {
+            return _repo.GetOrCreateArtist(name);
         }
     }
 }
