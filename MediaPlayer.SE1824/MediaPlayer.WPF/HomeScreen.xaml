@@ -187,22 +187,6 @@
                         Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <StackPanel
-                    Grid.Row="2"
-                    Margin="20,0,20,10">
-                    <!-- Progress Bar -->
-                    <ProgressBar
-                        x:Name="progressBar"
-                        Height="5"
-                        Minimum="0"
-                        Maximum="100"
-                        Value="0"
-                        Foreground="#1DB954"
-                        Background="#404040"
-                        MouseDown="progressBar_MouseDown"
-                        Margin="0,0,0,10" />
-                </StackPanel>
-
                 <!-- Now Playing Info -->
                 <StackPanel
                     Grid.Column="0"
@@ -254,6 +238,22 @@
                         Style="{StaticResource SpotifyButton}"
                         Margin="5"
                         Click="BtnStop_Click" />
+                </StackPanel>
+                
+                <StackPanel
+                    Grid.Row="2"
+                    Margin="20,0,20,10">
+                    <!-- Progress Bar -->
+                    <ProgressBar
+                        x:Name="progressBar"
+                        Height="5"
+                        Minimum="0"
+                        Maximum="100"
+                        Value="0"
+                        Foreground="#1DB954"
+                        Background="#404040"
+                        MouseDown="progressBar_MouseDown"
+                        Margin="0,0,0,10" />
                 </StackPanel>
 
                 <!-- Volume Control (placeholder) -->

@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\fleef\\Documents\\GitHub\\Music_Player\\MediaPlayer.SE1824\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|c:\\users\\fleef\\documents\\github\\music_player\\mediaplayer.se1824\\mediaplayer.wpf\\homescreen.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|solutionrelative:mediaplayer.wpf\\homescreen.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|c:\\users\\fleef\\documents\\github\\music_player\\mediaplayer.se1824\\mediaplayer.wpf\\homescreen.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|solutionrelative:mediaplayer.wpf\\homescreen.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|c:\\users\\fleef\\documents\\github\\music_player\\mediaplayer.se1824\\mediaplayer.wpf\\uploadmusicdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|solutionrelative:mediaplayer.wpf\\uploadmusicdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|c:\\users\\fleef\\documents\\github\\music_player\\mediaplayer.se1824\\mediaplayer.wpf\\homescreen.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|solutionrelative:mediaplayer.wpf\\homescreen.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|c:\\users\\fleef\\documents\\github\\music_player\\mediaplayer.se1824\\mediaplayer.wpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|solutionrelative:mediaplayer.wpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|c:\\users\\fleef\\documents\\github\\music_player\\mediaplayer.se1824\\mediaplayer.wpf\\uploadmusicdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|solutionrelative:mediaplayer.wpf\\uploadmusicdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E52CAE6-6648-472E-B23F-F47A826FA176}|MediaPlayer.WPF\\MediaPlayer.WPF.csproj|c:\\users\\fleef\\documents\\github\\music_player\\mediaplayer.se1824\\mediaplayer.wpf\\uploadmusicdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1296,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,20 +98,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "HomeScreen.xaml.cs",
               "DocumentMoniker": "C:\\Users\\fleef\\Documents\\GitHub\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\HomeScreen.xaml.cs",
               "RelativeDocumentMoniker": "MediaPlayer.WPF\\HomeScreen.xaml.cs",
               "ToolTip": "C:\\Users\\fleef\\Documents\\GitHub\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\HomeScreen.xaml.cs",
               "RelativeToolTip": "MediaPlayer.WPF\\HomeScreen.xaml.cs",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAwwIgAAABYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH8AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-12T10:03:41.888Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Users\\fleef\\Documents\\GitHub\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\App.xaml",
               "RelativeDocumentMoniker": "MediaPlayer.WPF\\App.xaml",
@@ -131,12 +131,11 @@
               "RelativeToolTip": "MediaPlayer.DAL\\Repositories\\SongRepository.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAcwCoAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T09:43:28.46Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-12T09:43:28.46Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "HomeScreen.xaml",
               "DocumentMoniker": "C:\\Users\\fleef\\Documents\\GitHub\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\HomeScreen.xaml",
               "RelativeDocumentMoniker": "MediaPlayer.WPF\\HomeScreen.xaml",
@@ -156,8 +155,7 @@
               "RelativeToolTip": "MediaPlayer.WPF\\UploadMusicDialog.xaml.cs",
               "ViewState": "AgIAAG0AAAAAAAAAAAAywHEAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T00:00:14.961Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T00:00:14.961Z"
             },
             {
               "$type": "Document",
@@ -169,8 +167,7 @@
               "RelativeToolTip": "MediaPlayer.BLL\\Services\\SongService.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAiwDEAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T09:52:22.075Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-12T09:52:22.075Z"
             },
             {
               "$type": "Document",
@@ -182,8 +179,7 @@
               "RelativeToolTip": "MediaPlayer.DAL\\Entities\\Song.cs",
               "ViewState": "AgIAABEAAAAAAAAAAADwvxsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T00:14:02.618Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T00:14:02.618Z"
             },
             {
               "$type": "Document",
@@ -195,20 +191,18 @@
               "RelativeToolTip": "MediaPlayer.DAL\\Entities\\Artist.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T00:25:39.954Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T00:25:39.954Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UploadMusicDialog.xaml",
               "DocumentMoniker": "C:\\Users\\fleef\\Documents\\GitHub\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\UploadMusicDialog.xaml",
               "RelativeDocumentMoniker": "MediaPlayer.WPF\\UploadMusicDialog.xaml",
               "ToolTip": "C:\\Users\\fleef\\Documents\\GitHub\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\UploadMusicDialog.xaml",
               "RelativeToolTip": "MediaPlayer.WPF\\UploadMusicDialog.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-14T00:00:10.655Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-14T00:00:10.655Z"
             }
           ]
         },
