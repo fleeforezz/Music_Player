@@ -33,5 +33,20 @@ namespace MediaPlayer.WPF
         {
 
         }
+
+        private void lvSongs_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnStop_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void progressBar_MouseDown(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

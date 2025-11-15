@@ -12,6 +12,12 @@
     FontFamily="Segoe UI"
     WindowStartupLocation="CenterScreen"
     Background="#000000">
+
+    <Window.Resources>
+        <local:VolumeConverter
+            x:Key="VolumeConverter" />
+    </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition
@@ -225,11 +231,11 @@
                             Grid.Row="0"
                             Orientation="Horizontal"
                             Margin="0,0,0,15">
-                            <TextBlock 
+                            <TextBlock
                                 Text="Most Played"
                                 Foreground="White"
                                 FontSize="24"
-                                FontWeight="Bold"/>
+                                FontWeight="Bold" />
                         </StackPanel>
 
                         <ScrollViewer
@@ -245,9 +251,291 @@
                     </Grid>
 
                     <!-- Explore Section -->
-                    
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+                                Height="Auto" />
+                            <RowDefinition
+                                Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel
+                            Grid.Row="0"
+                            Orientation="Horizontal"
+                            Margin="0,0,0,15">
+                            <TextBlock
+                                Text="Explore from your librry"
+                                Foreground="White"
+                                FontSize="24"
+                                FontWeight="Bold" />
+                        </StackPanel>
+
+                        <ListView
+                            Grid.Row="1"
+                            x:Name="lvSongs"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                            SelectionChanged="lvSongs_SelectionChanged">
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel
+                                        Orientation="Horizontal" />
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+                            <ListView.ItemContainerStyle>
+                                <Style
+                                    TargetType="ListViewItem">
+                                    <Setter
+                                        Property="Background"
+                                        Value="Transparent" />
+                                    <Setter
+                                        Property="BorderThickness"
+                                        Value="0" />
+                                    <Setter
+                                        Property="Padding"
+                                        Value="0" />
+                                    <Setter
+                                        Property="Margin"
+                                        Value="0" />
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Border
+                                        Style="{StaticResource AlbumCard}"
+                                        Width="170">
+                                        <StackPanel>
+                                            <Border
+                                                Width="140"
+                                                Height="140"
+                                                CornerRadius="8"
+                                                Background="#2563EB"
+                                                Margin="0,0,0,10">
+                                                <Image
+                                                    Source="{Binding CoverArt}"
+                                                    Stretch="UniformToFill" />
+                                            </Border>
+                                            <TextBlock
+                                                Text="{Binding Title}"
+                                                Foreground="White"
+                                                FontWeight="SemiBold"
+                                                TextTrimming="CharacterEllipsis"
+                                                FontSize="14"
+                                                Margin="0,0,0,5" />
+                                            <TextBlock
+                                                Text="{Binding Artist}"
+                                                Foreground="#B3B3B3"
+                                                FontSize="13"
+                                                TextTrimming="CharacterEllipsis" />
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
                 </StackPanel>
             </ScrollViewer>
+
+            <!-- Bottom Player Bar -->
+            <Border
+                Grid.Row="1"
+                Background="#181818"
+                BorderBrush="#282828"
+                BorderThickness="0,1,0,0"
+                Padding="15">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+                            Width="*" />
+                        <ColumnDefinition
+                            Width="Auto" />
+                        <ColumnDefinition
+                            Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Now Playing Info -->
+                    <StackPanel
+                        Grid.Column="0"
+                        Orientation="Horizontal"
+                        VerticalAlignment="Center">
+                        <Border
+                            Width="56"
+                            Height="56"
+                            CornerRadius="4"
+                            Background="#282828"
+                            Margin="0,0,12,0">
+                            <Image
+                                x:Name="imgCoverArt"
+                                Stretch="UniformToFill" />
+                        </Border>
+                        <StackPanel
+                            VerticalAlignment="Center">
+                            <TextBlock
+                                x:Name="txtNowPlaying"
+                                Text="-"
+                                Foreground="White"
+                                FontSize="14"
+                                FontWeight="SemiBold" />
+                            <TextBlock
+                                x:Name="txtNowPlayingArtist"
+                                Text="-"
+                                Foreground="#B3B3B3"
+                                FontSize="12" />
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- PLayback Controls -->
+                    <StackPanel
+                        Grid.Column="1"
+                        VerticalAlignment="Center"
+                        Width="500">
+                        <StackPanel
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="0,0,0,8">
+                            <Button
+                                Content="🔀"
+                                Style="{StaticResource ModernButton}"
+                                Width="32"
+                                Height="32"
+                                Padding="0"
+                                Margin="5,0" />
+                            <Button
+                                Content="⏮"
+                                Style="{StaticResource ModernButton}"
+                                Width="32"
+                                Height="32"
+                                Padding="0"
+                                Margin="5,0"
+                                HorizontalContentAlignment="Center" />
+                            <Button
+                                x:Name="btnPlay"
+                                Content="▶"
+                                Background="White"
+                                Foreground="Black"
+                                Width="36"
+                                Height="36"
+                                FontSize="12"
+                                BorderThickness="0"
+                                Margin="5,0"
+                                Cursor="Hand"
+                                Click="BtnPlay_Click">
+                                <Button.Template>
+                                    <ControlTemplate
+                                        TargetType="Button">
+                                        <Border
+                                            Background="{TemplateBinding Background}"
+                                            CornerRadius="18">
+                                            <ContentPresenter
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button
+                                Content="⏭"
+                                Style="{StaticResource ModernButton}"
+                                Width="32"
+                                Height="32"
+                                Padding="0"
+                                Margin="5,0"
+                                HorizontalContentAlignment="Center" />
+                            <Button
+                                Content="🔁"
+                                Style="{StaticResource ModernButton}"
+                                Width="32"
+                                Height="32"
+                                Padding="0"
+                                Margin="5,0"
+                                HorizontalContentAlignment="Center" />
+                        </StackPanel>
+                        
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition
+                                    Width="Auto" />
+                                <ColumnDefinition
+                                    Width="*" />
+                                <ColumnDefinition
+                                    Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock
+                                Grid.Column="0"
+                                Text="0:00"
+                                Foreground="#B3B3B3"
+                                FontSize="11"
+                                VerticalAlignment="Center"
+                                Margin="0,0,10,0" />
+
+                            <ProgressBar
+                                Grid.Column="1"
+                                x:Name="progressBar"
+                                Height="4"
+                                Minimum="0"
+                                Maximum="100"
+                                Value="0"
+                                Foreground="#1DB954"
+                                Background="#4D4D4D"
+                                BorderThickness="0"
+                                MouseDown="progressBar_MouseDown" />
+
+                            <TextBlock
+                                Grid.Column="2"
+                                Text="0:00"
+                                Foreground="#B3B3B3"
+                                FontSize="11"
+                                VerticalAlignment="Center"
+                                Margin="10,0,0,0" />
+                        </Grid>
+                    </StackPanel>
+                    
+                    <!-- Volume & Additional Controls -->
+                    <StackPanel
+                        Grid.Column="2"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center">
+                        <Button 
+                            x:Name="btnStop"
+                            Content="■"
+                            Style="{StaticResource ModernButton}"
+                            Width="32"
+                            Height="32"
+                            Padding="0"
+                            Margin="5,0"
+                            HorizontalAlignment="Center"
+                            Click="btnStop_Click" />
+                        <Button
+                            Content="🔊"
+                            Style="{StaticResource ModernButton}"
+                            Width="32"
+                            Height="32"
+                            Padding="0"
+                            Margin="5,0"
+                            HorizontalContentAlignment="Center"/>
+                        <Slider 
+                            x:Name="sliderVolume"
+                            Width="100"
+                            Minimum="0"
+                            Maximum="100"
+                            Value="70"
+                            VerticalAlignment="Center"
+                            Foreground="#1DB954"
+                            Margin="5,0,0,0"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
         </Grid>
+        
+        <!-- MediaElement for playing audio -->
+        <MediaElement 
+            x:Name="mediaPlayer"
+            Grid.Column="1"
+            LoadedBehavior="Manual"
+            Volume="{Binding ElementName=sliderVolume, Path=Value, Converter={StaticResource VolumeConverter}}"
+            Visibility="Collapsed"/>
     </Grid>
 </Window>

@@ -112,7 +112,7 @@
               "RelativeDocumentMoniker": "MediaPlayer.WPF\\Home.xaml.cs",
               "ToolTip": "E:\\Cabinet\\Github\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\Home.xaml.cs",
               "RelativeToolTip": "MediaPlayer.WPF\\Home.xaml.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAArwCEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAUwDAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-14T15:23:11.444Z",
               "EditorCaption": ""
@@ -137,7 +137,7 @@
               "RelativeDocumentMoniker": "MediaPlayer.WPF\\HomeScreen.xaml.cs",
               "ToolTip": "E:\\Cabinet\\Github\\Music_Player\\MediaPlayer.SE1824\\MediaPlayer.WPF\\HomeScreen.xaml.cs",
               "RelativeToolTip": "MediaPlayer.WPF\\HomeScreen.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH8AAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAwwH8AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-12T10:03:41.888Z",
               "EditorCaption": ""
@@ -164,8 +164,7 @@
               "RelativeToolTip": "MediaPlayer.DAL\\Repositories\\SongRepository.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAcwCoAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T09:43:28.46Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-12T09:43:28.46Z"
             },
             {
               "$type": "Document",
